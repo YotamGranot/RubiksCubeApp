@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/cube"
+        android:id="@+id/ivImage" 
+        android:layout_gravity="center_horizontal"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etFname"
+        android:textSize="20dp"
+        android:text=""
+        android:hint="first name"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#0e82f5" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etLname"
+        android:textSize="20dp"
+        android:text=""
+        android:hint="Last name"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#0e82f5" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDialogTime"
+        android:text=""
+        android:layout_gravity="center_horizontal"
+        android:textSize="70dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDialogAddPic"
+        android:textColor="#dc130c"
+        android:textSize="30sp"
+        android:text="add picture"
+        android:gravity="left"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDialogSave"
+        android:textColor="#dc130c"
+        android:textSize="30sp"
+        android:text="save"
+        android:gravity="left"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp" />
+</LinearLayout>  
+
+ 
+
+ 

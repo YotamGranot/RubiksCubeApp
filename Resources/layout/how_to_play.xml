@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="exit"
+        android:layout_alignParentTop="true"
+        android:id="@+id/btnExitHowToPlay"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_to="@id/btnExitHowToPlay"
+        android:text="Welcome to\nthe CUBE"
+        android:layout_gravity="center"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:fontFamily="serif"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:fontFamily="serif"
+        android:text="To rotate the whole cube you need to swipe your finger from the center you want to rotate from towrds the center you want to rotate to.\n
+To rotate a layer simply swipe on the layer in the desired direction while stayiing on the same side. "/>
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#84f542">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:layout_margin="20dp"
+        android:text="The Cube"
+        android:textSize="70dp"
+        android:textColor="#ff3300"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCube"
+        android:text="cube"
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#000000"
+
+/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnData"
+        android:text="data"
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:layout_margin="20dp"
+        android:backgroundTint="#000000"
+/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSettings"
+        android:text="@string/action_settings"
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:layout_margin="20dp"
+        android:backgroundTint="#000000"
+
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnHowTo"
+        android:text="How to play?"
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:layout_margin="20dp"
+        android:backgroundTint="#000000"
+
+        />
+</LinearLayout>
