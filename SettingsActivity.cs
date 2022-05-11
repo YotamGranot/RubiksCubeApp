@@ -14,7 +14,7 @@ namespace RubiksCubeApp
     [Activity(Label = "SettingsActivity")]
     public class SettingsActivity : Activity
     {
-        Button startMusic, stopMusic, btnCubeHelpOn, btnCubeHelpOff, chooseMusic;
+        Button startMusic, stopMusic, btnCubeHelpOn, btnCubeHelpOff, chooseMusic,btnExit;
         EditText etTps;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,6 +26,7 @@ namespace RubiksCubeApp
             chooseMusic = FindViewById<Button>(Resource.Id.btnChooseMusic);
             btnCubeHelpOn = FindViewById<Button>(Resource.Id.btnSettingsHelpButtonsOn);
             btnCubeHelpOff = FindViewById<Button>(Resource.Id.btnSettingsHelpButtonsOff);
+            btnExit = FindViewById<Button>(Resource.Id.btnExitSettings);
             etTps = FindViewById<EditText>(Resource.Id.etTps);
             startMusic.Click += StartMusic_Click;
             stopMusic.Click += StopMusic_Click;
@@ -33,7 +34,17 @@ namespace RubiksCubeApp
             btnCubeHelpOn.Click += BtnCubeHelpOn_Click;
             etTps.AfterTextChanged += EtTps_AfterTextChanged;
             chooseMusic.Click += ChooseMusic_Click;
+            btnExit.Click += BtnExit_Click;
             initialize();
+        }
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Preferences.uploadToSP(MainActivity.sp);
+        }
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
 
         private void ChooseMusic_Click(object sender, EventArgs e)

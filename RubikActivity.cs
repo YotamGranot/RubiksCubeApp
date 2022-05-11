@@ -23,7 +23,7 @@ namespace RubiksCubeApp
         RubikView rubikView;
         Button btnSave, btnShuffle, btnSolve, btnShow;
         Button btnF, btnFI, btnB, btnBI, btnU, btnUI, btnD, btnDI, btnR, btnRI, btnL, btnLI;
-        String shuffle = "";
+        string shuffle = "";
         Dialog d;
         private EditText etFname;
         private EditText etLname;

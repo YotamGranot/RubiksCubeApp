@@ -18,7 +18,7 @@ namespace RubiksCubeApp
         RubiksCube rubiksCube;
         bool touchDown = false, touchUp = false;
         float xDown = 0, yDown = 0, xUp = 0, yUp = 0;
-
+        bool HTP = false;
         public RubikView(Context context, IAttributeSet attrs) :
             base(context, attrs)
         {
@@ -33,6 +33,13 @@ namespace RubiksCubeApp
         public RubikView(Context context, RubiksCube rubiksCube)
            : base(context)
         {
+            this.rubiksCube = rubiksCube;
+            Initialize();
+        }
+        public RubikView(Context context, RubiksCube rubiksCube,bool HTP)
+           : base(context)
+        {
+            this.HTP = true;
             this.rubiksCube = rubiksCube;
             Initialize();
         }
@@ -546,6 +553,10 @@ namespace RubiksCubeApp
         }
         private void checkSolve()
         {
+            if (HTP)
+            {
+                return;
+            }
             if (rubiksCube.isSolved())
             {
                 RubikActivity activity = (RubikActivity)Context;

@@ -10,6 +10,15 @@
         android:layout_margin="10dp"
         android:text="RECORDS"
         android:textSize="30dp"/>
+     <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Exit"
+            android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+            android:id="@+id/btnExitRecords"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/white"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

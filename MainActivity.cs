@@ -14,9 +14,9 @@ namespace RubiksCubeApp
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, Android.Views.View.IOnClickListener
     {
-        Button btnCube, btnData, btnSettings;
+        Button btnCube, btnData, btnSettings, btnHTP;
         const int RequestLocationId = 0;
-
+        public static Android.Content.ISharedPreferences sp;
         readonly string[] Permission =//ask for permissions
             {
                 Manifest.Permission.ReadPhoneState,
@@ -30,16 +30,23 @@ namespace RubiksCubeApp
             // Set our view from the "main" layout resource
             var db = new SQLiteConnection(DBHelper.Path());
             db.CreateTable<SolveRecord>(); //create db if not exist
-
+            sp = this.GetSharedPreferences("preferences", Android.Content.FileCreationMode.Private);
+            Preferences.downloadFromSP(sp);
+            if (Preferences.musicState)
+            {
+                Intent intent = new Intent(this, typeof(MusicService));
+                StartService(intent);
+            }
             RecordsActivity.solveRecords = RecordsActivity.getAllRecords();
             RecordsActivity.dbAdapter = new DBAdapter(this, RecordsActivity.solveRecords);
             btnCube = FindViewById<Button>(Resource.Id.btnCube);
             btnData = FindViewById<Button>(Resource.Id.btnData);
             btnSettings = FindViewById<Button>(Resource.Id.btnSettings);
+            btnHTP = FindViewById<Button>(Resource.Id.btnHowTo);
             btnCube.SetOnClickListener(this);
             btnData.SetOnClickListener(this);
             btnSettings.SetOnClickListener(this);
-
+            btnHTP.SetOnClickListener(this);
 
         }
 
@@ -61,6 +68,11 @@ namespace RubiksCubeApp
                 Intent intent = new Intent(this, typeof(SettingsActivity));
                 StartActivity(intent);
             }
+            else if (btnHTP == v)
+            {
+                Intent intent = new Intent(this, typeof(HTPActivity));
+                StartActivity(intent);
+            }
         }
         async Task TryToGetPermissions()
         {
@@ -72,7 +84,7 @@ namespace RubiksCubeApp
 
 
         }
-
+        
         async Task GetPermissionsAsync()
         {
             const string permission = Manifest.Permission.ReadPhoneState;

@@ -45,7 +45,11 @@ namespace RubiksCubeApp
             lv.OnItemClickListener = this;
             btnExit.Click += BtnExit_Click;
         }
-
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Preferences.uploadToSP(MainActivity.sp);
+        }
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Finish();

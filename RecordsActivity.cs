@@ -18,7 +18,7 @@ namespace RubiksCubeApp
         public static List<SolveRecord> solveRecords { get; set; }
         public static DBAdapter dbAdapter;
         ListView lv;
-        //Button btnGo;
+        Button btnExit;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -27,13 +27,20 @@ namespace RubiksCubeApp
             SetContentView(Resource.Layout.record_layout);
             var db = new SQLiteConnection(DBHelper.Path());
             db.CreateTable<SolveRecord>();
-
+            btnExit = FindViewById<Button>(Resource.Id.btnExitRecords);
+            btnExit.Click += BtnExit_Click;
             solveRecords = getAllRecords();
             dbAdapter = new DBAdapter(this, solveRecords);
             lv = FindViewById<ListView>(Resource.Id.lv);
             lv.Adapter = dbAdapter;
 
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Finish();
+        }
+
         protected override void OnResume()
         {
             base.OnResume();

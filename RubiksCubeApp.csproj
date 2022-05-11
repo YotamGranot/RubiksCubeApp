@@ -68,6 +68,7 @@
     <Compile Include="DBAdapter.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="DisplayUpdateHandler.cs" />
+    <Compile Include="HTPActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MusicRow.cs" />
     <Compile Include="MusicRowAdapter.cs" />
@@ -150,9 +151,6 @@
     <AndroidResource Include="Resources\layout\dbRow.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\how_to_play.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\insert_record_layout.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +182,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Raw\Vivaldi.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\how_to_play.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

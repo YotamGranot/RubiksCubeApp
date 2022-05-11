@@ -89,7 +89,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center">
         <Button
             android:layout_height="wrap_content"
@@ -97,6 +97,14 @@
             android:text="Choose Music"
             android:layout_marginTop="10dp"
             android:id="@+id/btnChooseMusic"
+            android:backgroundTint="@android:color/black"
+            android:textColor="@android:color/white"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Exit"
+            android:layout_marginTop="10dp"
+            android:id="@+id/btnExitSettings"
             android:backgroundTint="@android:color/black"
             android:textColor="@android:color/white"/>
     </LinearLayout>
